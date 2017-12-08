@@ -6,6 +6,7 @@ html
         style
           include 1.css
     body
+    div.box
       -arr=['新闻','简讯','信息']
       -arr1=['user','pass','tel']
       ul.ul1
@@ -17,9 +18,10 @@ html
             a(href="http://localhost:8000/"+arr1[i])
               li=arr[i]
       ol
-        -for(var i=0;i<txtArr.length;i++)
-          a(href="http://localhost:8000/txt?txt="+i)
-           li.li1=txtArr[i]
+        div
+          -for(var i=0;i<txtArr.length;i++)
+            a(href="http://localhost:8000/txt?txt="+i)
+             li=txtArr[i]
       ul.mum
         -for(var i=0;i<nums;i++)
          -if(txtUsd==i)
@@ -28,3 +30,4 @@ html
          -else
           a(href="http://localhost:8000/"+urld+"?usd="+i)
            li=i+1
+        
